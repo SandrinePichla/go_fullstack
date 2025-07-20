@@ -26,10 +26,7 @@ app.use((req, res, next) => {
 
 // Middleware pour enregistrer les requêtes reçues
 app.post('/api/stuff', (req, res, next) => {
-  console.log('Reçu dans POST /api/stuff :', req.body); // <== AJOUT
-
-
-  delete req.body._id; // Suppression de la propriété 'delete' de req.body
+    delete req.body._id; // Suppression de la propriété 'delete' de req.body
     const thing = new Thing({
         ...req.body // Utilisation de l'opérateur de décomposition pour créer un nouvel objet avec les propriétés de req.body
     });
