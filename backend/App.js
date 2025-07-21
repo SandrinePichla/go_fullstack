@@ -1,5 +1,7 @@
 const express = require('express');
+
 const bodyParser = require('body-parser');
+
 // Importation de mongoose pour la gestion de la base de données MongoDB  
 const mongoose = require('mongoose');
 
