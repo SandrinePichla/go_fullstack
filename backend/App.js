@@ -1,6 +1,6 @@
 const express = require('express');
-
 const bodyParser = require('body-parser');
+const path = require('path');
 
 // Importation de mongoose pour la gestion de la base de données MongoDB  
 const mongoose = require('mongoose');
@@ -28,5 +28,6 @@ app.use(bodyParser.json()); // Middleware pour parser le JSON dans les requêtes
 
 app.use('/api/stuff' , stuffRoutes);
 app.use('/api/auth', userRoutes);
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;
